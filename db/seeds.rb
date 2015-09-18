@@ -1,10 +1,4 @@
-# Create 15 users
-# 15 unique addresses
-# 25 unique items
-# constraint of 1-25 item_id for Order
-# constraint of 1-15 user_id for Order
-
-15.times do
+100.times do
   user = User.create({
       first_name: Faker::Name.first_name,
        last_name: Faker::Name.last_name,
@@ -12,13 +6,13 @@
 
   Address.create({
          user_id: user.id,
-     street_name: Faker::Address.street_name,
+     street_name: Faker::Address.street_address,
             city: Faker::Address.city,
            state: Faker::Address.state,
              zip: Faker::Address.zip })
 end
 
-25.times do
+1000.times do
   item = Item.create({
               name: Faker::Team.creature,
              price: rand(100000),
@@ -26,7 +20,7 @@ end
 
   Order.create({
            item_id: item.id,
-           user_id: Faker::Number.between(1, 15),
+           user_id: Faker::Number.between(1, 100),
           quantity: rand(1000) })
 end
 

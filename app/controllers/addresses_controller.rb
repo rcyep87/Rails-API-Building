@@ -14,8 +14,6 @@ class AddressesController < ApplicationController
     end
   end
 
-  end
-
   def create
   end
 
@@ -24,4 +22,5 @@ class AddressesController < ApplicationController
 
   def destroy
   end
+
 end
