@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   put     '/addresses/:id'  , to: 'addresses#update'
   delete  '/addresses/:id'  , to: 'addresses#destroy'
 
+  get     '/items'          , to: 'items#index'
+  get     '/items/:id'      , to: 'items#show'
 
-  get     '/orders'     , to: 'orders#index'
-  get     '/addresses'  , to: 'addresses#index'
-  get     '/items'      , to: 'items#index'
+  get     '/orders'         , to: 'orders#index'
 
 end
