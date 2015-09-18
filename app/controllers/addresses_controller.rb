@@ -20,6 +20,17 @@ class AddressesController < ApplicationController
   end
 
   def update
+    if Address.exists?(params[:id])
+      address = Address.find(params[:id])
+      address.user_id     = params.fetch(:user_id, address.user_id)
+      address.street_name = params.fetch(:street_name, address.street_name)
+      address.city        = params.fetch(:city, address.city)
+      address.state       = params.fetch(:state, address.state)
+      address.zip         = params.fetch(:zip, address.zip)
+      render json: address.to_json, status: 200
+    else
+      render json: { error_msg: "Record not found!", id: params[:id] }.to_json, status: 404
+    end
   end
 
   def destroy
