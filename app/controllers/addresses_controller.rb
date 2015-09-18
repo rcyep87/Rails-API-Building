@@ -15,6 +15,8 @@ class AddressesController < ApplicationController
   end
 
   def create
+    address = Address.create({ user_id: params[:user_id], street_name: params[:street_name], city: params[:city], state: params[:state], zip: params[:zip] })
+    render json: address.to_json, status: 200
   end
 
   def update
