@@ -24,6 +24,17 @@ class UsersController < ApplicationController
   end
 
   def update
+    user = User.find(params[:id])
+    if params[:first_name]
+      user.update(first_name: params[:first_name])
+    end
+    if params[:last_name]
+      user.update(last_name: params[:last_name])
+    end
+    if params[:age]
+      user.update(age: params[:age])
+    end
+    render json: user.to_json, status: 200
   end
 
   def destroy
