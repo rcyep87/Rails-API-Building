@@ -34,6 +34,13 @@ class AddressesController < ApplicationController
   end
 
   def destroy
+    if Address.exists?(params[:id])
+      address = Address.find(params[:id])
+      address.destroy
+      render json: { msg: "Address has been deleted from the database!" }.to_json, status: 200
+    else
+      render json: { error_msg: "Record not found!", id: params[:id] }.to_json, status: 404
+    end
   end
 
 end
