@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   delete  '/items/:id'      , to: 'items#destroy'
 
   get     '/orders'         , to: 'orders#index'
+  get     '/orders/:id'     , to: 'orders#show'
 
 end

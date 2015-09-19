@@ -6,6 +6,8 @@ class OrdersController < ApplicationController
   end
 
   def show
+    order = Order.find(params[:id])
+    render json: order.to_json, status: 200
   end
 
   def create
