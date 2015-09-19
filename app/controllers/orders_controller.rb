@@ -31,5 +31,11 @@ class OrdersController < ApplicationController
   end
 
   def destroy
+    if Order.exists?(params[:id])
+      Order.find(params[:id]).destroy
+      render json: { msg: "Successfully deleted an order from the system!" }.to_json, status: 200
+    else
+      render json: { error_msg: "Unable to locate order#: #{params[:id]} in system! Please try again." }.to_json, status: 404
+    end
   end
 end

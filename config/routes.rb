@@ -22,5 +22,6 @@ Rails.application.routes.draw do
   get     '/orders/:id'     , to: 'orders#show'
 
   put     '/orders/:id'     , to: 'orders#update'
+  delete  '/orders/:id'     , to: 'orders#destroy'
 
 end
