@@ -36,5 +36,11 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    if Item.exists?(params[:id])
+      Item.find(params[:id]).destroy
+      render json: { msg: "You have successfully deleted an item from the database" }.to_json, status: 200
+    else
+      render json: { error_msg: "Item #{params[:id]} not found in database!" }.to_json, status: 404
+    end
   end
 end

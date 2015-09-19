@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get     '/items/:id'      , to: 'items#show'
   post    '/items'          , to: 'items#create'
   put     '/items/:id'      , to: 'items#update'
+  delete  '/items/:id'      , to: 'items#destroy'
 
   get     '/orders'         , to: 'orders#index'
 
