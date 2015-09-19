@@ -15,6 +15,8 @@ class ItemsController < ApplicationController
   end
 
   def create
+    item = Item.create({ name: params[:name], price: params[:price], description: params[:description] })
+    render json: item.to_json, status: 200
   end
 
   def update
