@@ -15,7 +15,12 @@ class AddressesController < ApplicationController
   end
 
   def create
-    if params[:user_id].to_i <= User.last.id
+    id_array = []
+    User.ids.each do |id|
+     id_array << id
+    end
+
+    if id_array.include?(params[:user_id].to_i)
       new_address = Address.create({ user_id: params[:user_id], street_name: params[:street_name], city: params[:city], state: params[:state], zip: params[:zip] })
       render json: new_address.to_json, status: 200
     else
