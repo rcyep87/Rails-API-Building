@@ -18,14 +18,14 @@ class OrdersController < ApplicationController
     user_id_array = []
     item_id_array = []
 
-    User.select(:id).each do |id|
+    User.ids.each do |id|
       user_id_array << id
     end
 
-    Item.select(:id).each do |id|
+    Item.ids.each do |id|
       item_id_array << id
     end
-    if item_id_array.include?(params[:item_id]) && user_id_array.include?(params[:user_id])
+    if item_id_array.include?(params[:item_id].to_i) && user_id_array.include?(params[:user_id].to_i)
       new_order = Order.create({ item_id: params[:item_id], user_id: params[:user_id], quantity: params[:quantity] })
       render json: new_order.to_json, status: 200
     else
