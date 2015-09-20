@@ -15,16 +15,11 @@ class AddressesController < ApplicationController
   end
 
   def create
-    id_array = []
-    User.select(:id).each do |id|
-      id_array << id
-    end
-
-    if id_array.include?(params[:user_id])
+    if params[:user_id].to_i <= User.last.id
       new_address = Address.create({ user_id: params[:user_id], street_name: params[:street_name], city: params[:city], state: params[:state], zip: params[:zip] })
       render json: new_address.to_json, status: 200
     else
-      render json: { error_msg: "The user_id you've supplied is incorrect! Please try again."}.to_json, status: 404
+      render json: { error_msg: "The user_id: #{params[:user_id]} you've supplied is not valid! Please try again." }.to_json, status: 404
     end
   end
 
