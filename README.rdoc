@@ -1,28 +1,69 @@
-== README
+Description
+* I created an application that will allow you to retrieve purchase information from a database.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Features
+* User information
+* Items with description and price
+* Order information
+* User address information
 
-Things you may want to cover:
+Instructions
+* To retrieve User information
+  * Send a GET request to https://afternoon-everglades-1012.herokuapp.com/users
 
-* Ruby version
+* To retrieve a specific User information
+  * Send a GET request to https://afternoon-everglades-1012.herokuapp.com/users/:id
 
-* System dependencies
+* To create a new User
+  * Send a POST request to https://afternoon-everglades-1012.herokuapp.com/users
 
-* Configuration
+* To update an existing User
+  * Send a PUT request to https://afternoon-everglades-1012.herokuapp.com/users/:id
 
-* Database creation
+* To delete an existing User
+  * Send a DELETE request to https://afternoon-everglades-1012.herokuapp.com/users/:id
 
-* Database initialization
+* To retrieve Address information
+  * Send a GET request to https://afternoon-everglades-1012.herokuapp.com/addresses
 
-* How to run the test suite
+* To retrieve a specific Address information
+  * Send a GET request to https://afternoon-everglades-1012.herokuapp.com/addresses/:id
 
-* Services (job queues, cache servers, search engines, etc.)
+* To create a new Address
+  * Send a POST request to https://afternoon-everglades-1012.herokuapp.com/addresses
 
-* Deployment instructions
+* To update an existing Address
+  * Send a PUT request to https://afternoon-everglades-1012.herokuapp.com/Addresses/:id
 
-* ...
+* To delete an existing Address
+  * Send a DELETE request to https://afternoon-everglades-1012.herokuapp.com/Addresses/:id
 
+  * To retrieve Item information
+  * Send a GET request to https://afternoon-everglades-1012.herokuapp.com/items
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* To retrieve a specific Item information
+  * Send a GET request to https://afternoon-everglades-1012.herokuapp.com/items/:id
+
+* To create a new Item
+  * Send a POST request to https://afternoon-everglades-1012.herokuapp.com/items
+
+* To update an existing Item
+  * Send a PUT request to https://afternoon-everglades-1012.herokuapp.com/items/:id
+
+* To delete an existing Item
+  * Send a DELETE request to https://afternoon-everglades-1012.herokuapp.com/items/:id
+
+* To retrieve Order information
+  * Send a GET request to https://afternoon-everglades-1012.herokuapp.com/orders
+
+* To retrieve a specific Order information
+  * Send a GET request to https://afternoon-everglades-1012.herokuapp.com/orders/:id
+
+* To create a new Order
+  * Send a POST request to https://afternoon-everglades-1012.herokuapp.com/orders
+
+* To update an existing Order
+  * Send a PUT request to https://afternoon-everglades-1012.herokuapp.com/orders/:id
+
+* To delete an existing Order
+  * Send a DELETE request to https://afternoon-everglades-1012.herokuapp.com/orders/:id
